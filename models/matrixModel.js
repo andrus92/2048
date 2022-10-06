@@ -21,7 +21,25 @@ MatrixModel.prototype = Object.create(BaseModel.prototype);
 MatrixModel.prototype.contructor = MatrixModel;
 
 MatrixModel.prototype.startNewGame = function() {
-    this.attributes.grid[0][0] = 2;
+    // zeroize the matrix
+    this.attributes.grid = [
+        ['', '', '', ''],
+        ['', '', '', ''],
+        ['', '', '', ''],
+        ['', '', '', '']
+    ];
+
+    // Generate the first number
+    let coordinates = generateCoordinates(this.attributes.grid);
+    let num = generateNumber();
+    this.attributes.grid[coordinates.x][coordinates.y] = num;
+
+    // Generate the second number
+    coordinates = generateCoordinates(this.attributes.grid);
+    num = generateNumber();
+    this.attributes.grid[coordinates.x][coordinates.y] = num;
+
+    // publish the changes
     this.publish('changeData');
 }
 

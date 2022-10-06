@@ -9,6 +9,9 @@
 </head>
 <body>
     <div id="root"></div>
+    <div id='buttonBlock'>
+        <button id="newGameBtn">New Game</button>
+    </div>
 
 <!-- Summary Template -->
 <script type="text/html" id="summaryTemplate">
@@ -32,13 +35,14 @@
     <div>
         {{matrix}}
     </div>
-    <div id='buttonBlock'>
+    <!-- <div id='buttonBlock'>
         <button id="newGameBtn">New Game</button>
-    </div>
+    </div> -->
 </script>
 
 
 
+    <script src="./utils/logic.js"></script>
     <script src="./utils/pubSub.js"></script>
     <script src="./models/baseModel.js"></script>
     <script src="./controllers/controller.js"></script>
