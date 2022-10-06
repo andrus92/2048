@@ -10,11 +10,11 @@
 <body>
     <div id="root"></div>
 
-    <script type="text/html" id="summaryTemplate">
-        <div class="header">
-            <h1 id="title">2048</h1>
-        </div>
-        <div id="results">
+<!-- Summary Template -->
+<script type="text/html" id="summaryTemplate">
+    <div class="header">
+        <h1 id="title">2048</h1>
+        <div class="results">
             <div class="score">
                 <h2>Score</h2>
                 <div id="scoreResult">{{totalScore}}</div>
@@ -24,22 +24,33 @@
                 <div id="bestResult">{{bestScore}}</div>
             </div>
         </div>
-    </script>
+    </div>
+</script>
+
+<!-- Matrix Template -->
+<script type="text/html" id="matrixTemplate">
+    <div>
+        {{matrix}}
+    </div>
+    <div id='buttonBlock'>
+        <button id="newGameBtn">New Game</button>
+    </div>
+</script>
 
 
-    <script type="text/html" id="matrixTemplate">
-        <div id="matrix">
-            {{matrix}}
-        </div>
-    
-        <div id="buttonBlock">
-            <button id="newGameButton">New Game</button>
-        </div>
-    </script>
 
+    <script src="./utils/pubSub.js"></script>
+    <script src="./models/baseModel.js"></script>
+    <script src="./controllers/controller.js"></script>
+    <script src="./utils/utils.js"></script>
+    <script src="./models/matrixModel.js"></script>
+    <script src="./models/summaryModel.js"></script>
+    <script src="./controllers/controller.js"></script>
+    <script src="./views/baseView.js"></script>
     <script src="./views/matrixView.js"></script>
     <script src="./views/summaryView.js"></script>
     <script src="./views/appView.js"></script>
+    
     
     
 </body>

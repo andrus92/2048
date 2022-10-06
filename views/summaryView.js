@@ -1,9 +1,21 @@
 function SummaryView() {
-    this.template = document.querySelector('#summaryTemplate').innerHTML;
+    this.summaryModel = new SummaryModel();
+    this.template = document.getElementById('summaryTemplate').innerHTML;
+    this.className = 'summary';
+    BaseView.call(this);
 }
 
-SummaryView.prototype.render = function() {
-    var el = document.createElement('div');
-    el.innerHTML = this.template;
-    return el;
+SummaryView.prototype = Object.create(BaseView.prototype);
+SummaryView.prototype.constructor = SummaryView;
+
+SummaryView.prototype.beforeRender = function() {
+    
+}
+
+SummaryView.prototype.render = function () {
+    return templateStr(this.template, this.summaryModel.attributes);
+}
+
+SummaryView.prototype.afterRender = function () {
+
 }
