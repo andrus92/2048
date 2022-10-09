@@ -1,9 +1,8 @@
 function SummaryModel () {
     BaseModel.call(this);
     this.attributes = {
-        totalScore: 55,
+        totalScore: 0,
         bestScore: localStorage.getItem('2048_bestScore') || 0,
-        //bestScore: 0
     }
 
     var instance = this;
