@@ -1,6 +1,5 @@
 function MatrixModel () {
     BaseModel.call(this);
-    console.log('constr matrmodel')
     this.attributes = {
         grid: [
             ['', '', '', ''],
@@ -40,16 +39,17 @@ MatrixModel.prototype.startNewGame = function() {
 }
 
 MatrixModel.prototype.playGame = function(key) {
-
+    let res = 0;
+    
     switch(key) {
         case 'ArrowUp':
         case 'ArrowDown':
         case 'ArrowRight':
         case 'ArrowLeft':
-            handleArrowPush(this.attributes.grid, key);
+            res = handleArrowPush(this.attributes.grid, key);
             break;
         default:
-            return;
+            return 0;
     }
 
     if (generateNewNumber(this.attributes.grid) === true) {
@@ -57,4 +57,5 @@ MatrixModel.prototype.playGame = function(key) {
     } else if (isGameOver(this.attributes.grid) === true) {
         alert('The end of the game');
     }
+    return res;
 }

@@ -137,6 +137,7 @@ function shiftLeft(grid) {
 
 
 function downMerge(grid) {
+    let res = 0;
     let i = 0;
     let j = 0;
     const len = grid.length;
@@ -148,13 +149,16 @@ function downMerge(grid) {
                 if (grid[i][j] === grid[i - 1][j]) {
                     grid[i][j] *= 2;
                     grid[i - 1][j] = '';
+                    res += grid[i][j];
                 }
             }
         }
     }
+    return res;
 }
 
 function upMerge(grid) {
+    let res = 0;
     let i = 0;
     let j = 0;
     const len = grid.length;
@@ -166,13 +170,16 @@ function upMerge(grid) {
                 if (grid[i][j] === grid[i + 1][j]) {
                     grid[i][j] *= 2;
                     grid[i + 1][j] = '';
+                    res += grid[i][j];
                 }
             }
         }
     }
+    return res;
 }
 
 function rightMerge(grid) {
+    let res = 0;
     let i = 0;
     let j = 0;
     const len = grid.length;
@@ -184,13 +191,16 @@ function rightMerge(grid) {
                 if (grid[i][j] === grid[i][j - 1]) {
                     grid[i][j] *= 2;
                     grid[i][j - 1] = '';
+                    res += grid[i][j];
                 }
             }
         }
     }
+    return res;
 }
 
 function leftMerge(grid) {
+    let res = 0;
     let i = 0;
     let j = 0;
     const len = grid.length;
@@ -202,37 +212,42 @@ function leftMerge(grid) {
                 if (grid[i][j] === grid[i][j + 1]) {
                     grid[i][j] *= 2;
                     grid[i][j + 1] = '';
+                    res += grid[i][j];
                 }
             }
         }
     }
+    return res;
 }
 
 function handleArrowPush(grid, keyCode) {
+    let res = 0;
+
     switch(keyCode) {
         case 'ArrowUp':
             shiftUp(grid);
-            upMerge(grid);
+            res = upMerge(grid);
             shiftUp(grid);
             break;
         case 'ArrowDown':
             shiftDown(grid);
-            downMerge(grid);
+            res = downMerge(grid);
             shiftDown(grid);
             break;
         case 'ArrowRight':
             shiftRight(grid);
-            rightMerge(grid);
+            res = rightMerge(grid);
             shiftRight(grid);
             break;
         case 'ArrowLeft':
             shiftLeft(grid);
-            leftMerge(grid);
+            res = leftMerge(grid);
             shiftLeft(grid);
             break;
         default:
-            return;
+            return 0;
     }
+    return res;
 }
 
 function isGameOver(grid) {
