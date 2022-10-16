@@ -52,10 +52,9 @@ MatrixModel.prototype.playGame = function(key) {
             return 0;
     }
 
-    if (generateNewNumber(this.attributes.grid) === true) {
+    if (generateNewNumber(this.attributes.grid)) {
         this.publish('changeData');
-    } else if (isGameOver(this.attributes.grid) === true) {
-        alert('The end of the game');
     }
+
     return res;
 }

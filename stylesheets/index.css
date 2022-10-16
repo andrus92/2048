@@ -1,5 +1,6 @@
 @import "summary.css";
 @import "matrix.css";
+@import "modal.css";
 
 body {
     font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
@@ -7,13 +8,13 @@ body {
     position: static;
 }
 
-#buttonBlock {
+.buttonBlock {
     margin: 30px auto 0 auto;
     text-align: center;
 
 }
 
-#newGameBtn {
+.newGameBtn {
     outline: none;
     width: 200px;
     height: 70px;
@@ -27,7 +28,7 @@ body {
     border: none;
 }
 
-#newGameBtn:hover {
+.newGameBtn:hover {
     background-color: #ffc107;
     font-size: 19px;
 }

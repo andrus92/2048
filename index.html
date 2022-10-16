@@ -9,8 +9,8 @@
 </head>
 <body>
     <div id="root"></div>
-    <div id='buttonBlock'>
-        <button id="newGameBtn">New Game</button>
+    <div class="buttonBlock">
+        <button class="newGameBtn" id="newGameBtn">New Game</button>
     </div>
 
 <!-- Summary Template -->
@@ -35,9 +35,20 @@
     <div>
         {{matrix}}
     </div>
-    <!-- <div id='buttonBlock'>
-        <button id="newGameBtn">New Game</button>
-    </div> -->
+</script>
+
+<script type="text/html" id="modalTemplate">
+    <div class="modal" style="display: {{display}}">
+        <div class="modal__block">
+            <div class="modal__container">
+                <div class="modal__text">Your result is: {{totalScore}}</div>
+                <div class='buttonBlock'>
+                    <button class="newGameBtn" id="modal_newGameBtn">Try again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </script>
 
 
@@ -47,10 +58,12 @@
     <script src="./models/baseModel.js"></script>
     <script src="./controllers/controller.js"></script>
     <script src="./utils/utils.js"></script>
+    <script src="./models/modalModel.js"></script>
     <script src="./models/matrixModel.js"></script>
     <script src="./models/summaryModel.js"></script>
     <script src="./controllers/controller.js"></script>
     <script src="./views/baseView.js"></script>
+    <script src="./views/modalView.js"></script>
     <script src="./views/matrixView.js"></script>
     <script src="./views/summaryView.js"></script>
     <script src="./views/appView.js"></script>

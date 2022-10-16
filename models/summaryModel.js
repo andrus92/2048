@@ -22,6 +22,10 @@ SummaryModel.prototype.startNewGame = function() {
     this.publish('changeScore');
 }
 
+SummaryModel.prototype.getTotalScore = function() {
+    return this.attributes.totalScore;
+}
+
 SummaryModel.prototype.addPoints = function(numPoints) {
     if (numPoints !== 0) {
         this.attributes.totalScore += numPoints;
